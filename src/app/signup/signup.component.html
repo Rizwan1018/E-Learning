@@ -1,0 +1,16 @@
+<h2>Signup</h2>
+
+<form (ngSubmit)="onSignUp()">
+
+    <input type="text" name="name" id="name" [(ngModel)]="user.name" placeholder="fullName">
+    
+    <input type="email" name="email" id="email" [(ngModel)]="user.email" placeholder="email">
+    
+    <input type="password" name="password" id="password" [(ngModel)]="user.password" placeholder="Password">
+    
+    <!-- <input type="Confirmpassword" name="Confirmpassword" id="Confirmpassword" [(ngModel)]="user.confirmPassword" placeholder="ConfirmPassword"> -->
+
+    <div>
+        <button type="submit" >Sign Up  </button>
+    </div>
+</form>

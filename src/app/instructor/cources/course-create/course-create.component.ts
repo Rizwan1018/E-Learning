@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class CourseCreateComponent {
 
+  title = "Rizwan"
+
   courseForm:FormGroup;
   selectedFileUrl: string | null = null;
   apiUrl = 'http://localhost:3000/cources';
@@ -42,6 +44,11 @@ export class CourseCreateComponent {
         this.router.navigate(['/instructor/cources']);
       });
     }
+  }
+
+  disp:boolean=false;
+  displayCreateCourse(){
+    this.disp = !this.disp;
   }
 
 }

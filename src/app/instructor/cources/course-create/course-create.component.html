@@ -1,91 +1,100 @@
-<!-- <div class="sidebar d-lg-block">
-   <div class="sidenav">
-       <div class="my-anchors">
-       <h5>overview</h5>
-       <a>Assessment</a>
-       <a>Course List</a>
-       <a>Services</a> 
-       <a>Contact</a>
-   </div>
-   </div>
-<div class="logo-container d-lg-none">
- <img src="logo1.png" alt="Logo 1">
- <img src="logo2.png" alt="Logo 2">
-</div>
-</div> -->
-
-
-
-
-<div class="sidebar">
-    <div class="logo">
+<div class="layout">
+  <!--sidebar start-->
+ 
+    <div class="sidebar">
+      <div class="logo">
         <i class="bi bi-incognito"></i>
         <span>INCOGNITO LEARNING</span>
+      </div>
+      <nav class="nav flex-column">
+        <a routerLink="/" routerLinkActive="active" class="nav-link">
+          <i class="bi bi-house-door-fill"> Dashboard</i>
+        </a>
+        <a routerLink="/" routerLinkActive="active">
+          <i class="bi bi-play-circle-fill"> My Cources</i>
+        </a>
+        <a routerLink="/" routerLinkActive="active">
+          <i class="bi bi-calendar-fill"> Resources</i>
+        </a>
+        <a routerLink="/" routerLinkActive="active">
+          <i class="bi bi-folder-fill"> Assignments</i>
+        </a>
+        <a routerLink="/" routerLinkActive="active">
+          <i class="bi bi-question-circle-fill"> My Account</i>
+        </a>
+        <a routerLink="/" routerLinkActive="active">
+          <i class="bi bi-chat-dots-fill"> Resources</i>
+        </a>
+        <a routerLink="/" routerLinkActive="active">
+          <i class="bi bi-bar-chart-fill">Assignments</i>
+        </a>
+        <a routerLink="/" routerLinkActive="active">
+          <i class="bi bi-person-fill"> My Account</i>
+        </a>
+      </nav>
+    </div>
+  
+  <!--sidebar end-->
+  <!--topbar start-->
+  <div class="main mt-5 w-100">
+
+    <div class="instructor-nav">
+        <div>
+            {{title}}
+        </div>
+        <div>
+            
+        </div>
     </div>
 
 
-<nav class="nav">
-    <a routerLink="/" routerLinkActive="active">
-        <i class="bi bi-house-door-fill">  Dashboard</i>
-    </a>
-    <a routerLink="/" routerLinkActive="active">
-        <i class="bi bi-play-circle-fill">  My Cources</i>
-    </a>
-    <a routerLink="/" routerLinkActive="active">
-        <i class="bi bi-calendar-fill">  Resources</i>
-    </a>
-    <a routerLink="/" routerLinkActive="active">
-        <i class="bi bi-folder-fill">  Assignments</i>
-    </a>
-    <a routerLink="/" routerLinkActive="active">
-        <i class="bi bi-question-circle-fill">  My Account</i>
-    </a>
-    <a routerLink="/" routerLinkActive="active">
-        <i class="bi bi-chat-dots-fill">  Resources</i>
-    </a>
-    <a routerLink="/" routerLinkActive="active">
-        <i class="bi bi-bar-chart-fill"  >Assignments</i>
-    </a>
-    <a routerLink="/" routerLinkActive="active">
-        <i class="bi bi-person-fill">  My Account</i>
-    </a>
-</nav>
+    <div class="dash-head d-flex justify-content-between align-items-center me-5">
+        <div>
+      <h4 class="instructor-heading m-0">Instructor Dashboard</h4></div>
+      <button class="btn btn-info" (click)="displayCreateCourse()">
+        <i class="bi bi-plus"></i>
+        Create new course
+      </button>
+    </div>
+    <!--form div-->
+    <div
+      class="container-fluid d-flex justify-content-center text-white p-2 mt-5"
+      *ngIf="disp"
+    >
+      <h2>Create course</h2>
+
+      <div class="form-container d-flex">
+        <form (ngSubmit)="onSubmit()" [formGroup]="courseForm">
+          <div>
+            <label>Course Title</label>
+            <input
+              id="title"
+              formControlName="title"
+              placeholder="Course Title"
+            />
+          </div>
+
+          <div>
+            <label>Description</label>
+            <textarea
+              id="description"
+              formControlName="description"
+              placeholder="Course description"
+            ></textarea>
+          </div>
+
+          <div>
+            <label>Upload File</label>
+            <input id="upload" type="file" (change)="onFileSelected($event)" />
+          </div>
+
+          <div>
+            <button type="submit">Create</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <!--topbar end-->
 </div>
-
-
-
-
-
-
-<!-- 
-<div class="container-fluid d-flex justify-content-center text-white p-2 mt-5">
-<h2>Create course</h2>
-</div>
-
-<div class="form-container d-flex">
-
-<form (ngSubmit)="onSubmit()" [formGroup]="courseForm" >
-
-    <div>
-        <label>Course Title</label>
-        <input id="title" formControlName="title" placeholder="Course Title">
-    </div>
-
-    <div>
-        <label>Description</label>
-        <textarea id="description" formControlName="description" placeholder="Course description"></textarea>
-    </div>
-
-    <div>
-        <label>Upload File</label>
-        <input id="upload" type="file" (change)="onFileSelected($event)">
-    </div>
-
-    <div>
-        <button type="submit">Create</button>
-    </div>
-
-
-
-</form>
-</div>   -->

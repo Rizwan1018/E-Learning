@@ -51,11 +51,14 @@ h5 {
   color: grey;
   text-align: center;
 } */
-
-
+ .layout{
+  display: flex;
+  height: 100vh;
+ }
 
 .sidebar{
-  width: 240px;
+  left: 0;
+  width: 200px;
   background: #6112c2;
   color: #fff;
   height: 100vh;
@@ -69,14 +72,14 @@ h5 {
   padding: 20px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   
 }
 
 .nav{
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 .nav a{
@@ -92,4 +95,31 @@ h5 {
 .nav a:hover{
   background: rgba(255, 255, 255, 0.1);
   border-left: 3px solid #f87171;
+}
+.ins-container{
+  display: flex;
+  /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+
+}
+.instructor-heading{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 38px;
+  font-weight: bold;
+  padding: 20px 50px;
+}
+.top-bar{
+top: -90px;
+} 
+.dash-head button{
+  padding: 10px 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+
+}
+.card-columns .card{
+  display: flex;
+  flex-direction: row;
+  top: 200px;  
+ 
 }
